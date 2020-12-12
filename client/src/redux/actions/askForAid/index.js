@@ -13,6 +13,7 @@ export const aidRequest = (request) => {
           urgency:request.urgency ,
         })
         .then((response) => {
+          console.log(response)
           if (response.data.data) {
            
             dispatch({

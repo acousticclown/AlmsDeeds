@@ -8,6 +8,7 @@ import auth from "./auth/";
 import navbar from "./navbar/Index";
 import dataList from "./data-list/";
 import home from "./home-page/"
+import aidRequest from "./askForAid/" 
 const rootReducer = combineReducers({
   // calendar: calenderReducer,
   // emailApp: emailReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   navbar: navbar,
   dataList: dataList,
   home: home, 
+  aidRequest: aidRequest,
 });
 
 export default rootReducer;

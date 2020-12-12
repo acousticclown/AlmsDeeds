@@ -1,4 +1,4 @@
-export const aidRequest = (state = {data: [], isLoading: false }, action) => {
+const aidRequest = (state = {data: [], isLoading: false }, action) => {
     switch (action.type) {
       case "REQUEST_AID": {
         return { ...state, values: action.payload };
@@ -8,4 +8,6 @@ export const aidRequest = (state = {data: [], isLoading: false }, action) => {
       }
     }
   };
+
+  export default aidRequest;
   

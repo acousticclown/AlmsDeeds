@@ -21,8 +21,6 @@ import { connect } from "react-redux";
 
 class Aid extends Component {
     state = {
-      name:"",
-      email: "",
       category: "Medicinal Aid",
       urgency: "neutral",
       description:"",
@@ -34,7 +32,7 @@ class Aid extends Component {
       handleSubmit = e => {
         e.preventDefault();
         console.log(this.state)
-        aidRequest(this.state);
+        this.props.aidRequest(this.state);
       }
       render() {
         return (
@@ -44,26 +42,7 @@ class Aid extends Component {
         </CardHeader>
         <CardBody>
           <Form  action="/" onSubmit={this.handleSubmit}>
-        <FormGroup>
-        <Label for="data-name">Name</Label>
-        <Input
-          type="text"
-          
-          placeholder="Name"
-          onChange={(e) => this.setState({ name: e.target.value })}
-          id="data-name"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Email</Label>
-        <Input
-          type="email"
-          
-          placeholder="Email"
-          onChange={(e) => this.setState({ email: e.target.value })}
-          id="data-email"
-        />
-      </FormGroup>
+    
       <FormGroup>
         <Label for="data-name">Contact No.</Label>
         <Input
@@ -81,6 +60,16 @@ class Aid extends Component {
           placeholder="Category"
           onChange={(e) => this.setState({ category: e.target.value })}
           id="data-category"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="data-name">Amount</Label>
+        <Input
+          type="text"
+         
+          placeholder="Amount in Ether"
+          onChange={(e) => this.setState({ amount: e.target.value })}
+          id="data-name"
         />
       </FormGroup>
       <FormGroup>
@@ -104,16 +93,7 @@ class Aid extends Component {
           id="data-reason"
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Amount</Label>
-        <Input
-          type="text"
-         
-          placeholder="Amount"
-          onChange={(e) => this.setState({ amount: e.target.value })}
-          id="data-name"
-        />
-      </FormGroup>
+      
       
       <Button color="primary"  type="submit" >
             Apply
@@ -131,4 +111,13 @@ class Aid extends Component {
       );
   }
 }
-export default Aid;  
+
+const mapStateToProps = (state) => {
+  return {
+    values: state.auth.login,
+  };
+};
+export default connect(mapStateToProps,  { aidRequest})(
+ Aid
+);
+  
