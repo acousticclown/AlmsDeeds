@@ -13,6 +13,13 @@ client/.pnp
 client/c.pnp.js
 client/package-lock.json
 client/yarn.lock
+client/src/redux
+client/src/@fake-db
+client/src/authServices
+client/src/pages
+client/src/components
+client/src/assets
+client/src/views
 
 # testing
 client/coverage
