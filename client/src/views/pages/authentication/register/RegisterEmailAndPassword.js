@@ -10,8 +10,9 @@ class RegisterEmailAndPassword extends React.Component {
   state = {
     email: "",
     password: "",
-    name: "",
+    fullName: "",
     confirmPass: "",
+    accHash: ""
   };
 
   handleRegister = (e) => {
@@ -19,7 +20,8 @@ class RegisterEmailAndPassword extends React.Component {
     this.props.signupWithEmailAndPassword(
       this.state.email,
       this.state.password,
-      this.state.name
+      this.state.fullName,
+      this.state.accHash,
     );
   };
 
@@ -29,12 +31,12 @@ class RegisterEmailAndPassword extends React.Component {
         <FormGroup className="form-label-group">
           <Input
             type="text"
-            placeholder="Name"
+            placeholder="Full Name"
             required
-            value={this.state.name}
-            onChange={(e) => this.setState({ name: e.target.value })}
+            value={this.state.fullName}
+            onChange={(e) => this.setState({ fullName: e.target.value })}
           />
-          <Label>Name</Label>
+          <Label>Full Name</Label>
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
@@ -58,13 +60,13 @@ class RegisterEmailAndPassword extends React.Component {
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
-            type="password"
-            placeholder="Confirm Password"
+            type="text"
+            placeholder="Account Hash"
             required
-            value={this.state.confirmPass}
-            onChange={(e) => this.setState({ confirmPass: e.target.value })}
+            value={this.state.accHash}
+            onChange={(e) => this.setState({ accHash: e.target.value })}
           />
-          <Label>Confirm Password</Label>
+          <Label>Account Hash</Label>
         </FormGroup>
         <FormGroup>
           <Checkbox

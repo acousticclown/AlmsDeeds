@@ -1,12 +1,6 @@
 import React from "react"
 import {
-  Button,
-  Navbar,
-  NavbarToggler,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink
+  Row
 } from "reactstrap"
 import { Edit2, Settings, Menu, X } from "react-feather"
 import coverImg from "../../../assets/img/profile/user-uploads/cover.jpg"
@@ -26,27 +20,21 @@ class ProfileHeader extends React.Component {
     return (
       <div className="profile-header mb-2">
         <div className="position-relative">
-          <div className="cover-container">
-            <img
-              src={coverImg}
-              alt="CoverImg"
-              className="img-fluid bg-cover w-100 rounded-0"
-            />
-          </div>
-          <div className="profile-img-container d-flex align-items-center justify-content-between">
-            <img
-              src={profileImg}
-              alt="porfileImg"
-              className="img-fluid img-border rounded-circle box-shadow-1"
-            />
-            {/* <div className="float-right">
-              <Button color="primary" className="btn-icon rounded-circle mr-1">
-                <Edit2 size={17} />
-              </Button>
-              <Button color="primary" className="btn-icon rounded-circle">
-                <Settings size={17} />
-              </Button>
-            </div> */}
+            <div className="profile-img-container d-flex align-items-center justify-content-center">
+              <img
+                src={profileImg}
+                alt="porfileImg"
+                className="img-fluid img-border rounded-circle box-shadow-1"
+              />
+            </div>
+          <div className="cover-container profile-header-nav">
+              <h4 className="mb-0 pt-md-1 pt-sm-50 pl-2">Acc. Id:<span className="text-success pl-2">udhbkw54brv43bgrvwkjw</span> </h4> <br />
+              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Name:<strong className="pl-2">John Doe</strong> </h5> <br />
+              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Email:<strong className="pl-2">john@gmail.com</strong> </h5>  <br />
+
+              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Donations:<strong className="pl-2">5</strong> </h5> <br />
+
+              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Transactions:<strong className="pl-2">8</strong> </h5> <br />
           </div>
         </div>
         <div className="d-flex justify-content-end align-items-center profile-header-nav">

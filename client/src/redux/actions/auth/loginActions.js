@@ -2,7 +2,7 @@
 import { history } from "../../../history";
 // import "firebase/auth";
 // import "firebase/database";
-import axios from "axios";
+import {authInstance} from "../../../request";
 // import { config } from "../../../authServices/firebase/firebaseConfig";
 
 // Init firebase if not already initialized
@@ -213,8 +213,8 @@ import axios from "axios";
 
 export const loginWithEmailAndPassword = (user) => {
   return (dispatch) => {
-    axios
-      .post("https://instant-parking.herokuapp.com/user/login", {
+    authInstance
+      .post("/user/login", {
         email: user.email,
         password: user.password,
       })

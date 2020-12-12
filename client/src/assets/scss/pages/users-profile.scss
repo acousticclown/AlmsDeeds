@@ -20,13 +20,13 @@
 #user-profile {
   .profile-img-container {
     position: absolute;
-    bottom: -3rem;
+    top: -3rem;
     left: 10%;
     width: 80%;
     img {
       border: 0.3rem solid $white;
-      height: 85px;
-      width: 85px;
+      height: 100px;
+      width: 100px;
     }
   }
   #profile-info {
