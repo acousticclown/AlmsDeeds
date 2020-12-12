@@ -61,7 +61,7 @@ class Profile extends React.Component {
               <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Donations:<strong className="pl-2">5</strong> </h5> 
               </Row>
               <Row>
-              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Transaction:<strong className="pl-2">8</strong> </h5> 
+              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Transactions:<strong className="pl-2">8</strong> </h5> 
               </Row>
               </CardBody>
               </Card>
