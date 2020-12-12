@@ -19,7 +19,7 @@ client/src/authServices
 client/src/pages
 client/src/components
 client/src/assets
-client/src/views
+
 
 # testing
 client/coverage
