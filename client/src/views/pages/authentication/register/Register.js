@@ -13,9 +13,7 @@ import {
   TabPane,
 } from "reactstrap";
 import classnames from "classnames";
-// import RegisterFirebase from "./RegisterFirebase";
-import RegisterAuth0 from "./RegisterAuth0";
-import RegisterJWT from "./RegisterJWT";
+
 import RegisterEmailAndPassword from "./RegisterEmailAndPassword";
 import registerImg from "../../../../assets/img/pages/register.jpg";
 import "../../../../assets/scss/pages/authentication.scss";
@@ -60,42 +58,7 @@ class Register extends React.Component {
                   Fill the below form to create your account.
                   </p>
                   <Nav tabs className="px-2">
-                    {/* <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "1",
-                        })}
-                        onClick={() => {
-                          this.toggle("1");
-                        }}
-                      >
-                        JWT
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "2",
-                        })}
-                        onClick={() => {
-                          this.toggle("2");
-                        }}
-                      >
-                        Firebase
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "3",
-                        })}
-                        onClick={() => {
-                          this.toggle("3");
-                        }}
-                      >
-                        Auth0
-                      </NavLink>
-                    </NavItem> */}
+                   
                     <NavItem>
                       <NavLink
                         className={classnames({
@@ -111,15 +74,7 @@ class Register extends React.Component {
                   </Nav>
                   <CardBody className="pt-1 pb-50">
                     <TabContent activeTab={this.state.activeTab}>
-                      {/* <TabPane tabId="1">
-                        <RegisterJWT />
-                      </TabPane>
-                      <TabPane tabId="2">
-                        <RegisterFirebase />
-                      </TabPane> */}
-                      {/* <TabPane tabId="3">
-                        <RegisterAuth0 />
-                      </TabPane> */}
+                  
                       <TabPane tabId="4">
                         <RegisterEmailAndPassword />
                       </TabPane>

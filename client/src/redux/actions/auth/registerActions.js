@@ -1,78 +1,39 @@
-// import * as firebase from "firebase/app";
+
 import { history } from "../../../history";
-// import "firebase/auth";
-// import "firebase/database";
+
 import {authInstance} from "../../../request";
-// import { config } from "../../../authServices/firebase/firebaseConfig";
 
-// Init firebase if not already initialized
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(config);
-// }
-
-// let firebaseAuth = firebase.auth();
-
-// export const signupWithFirebase = (email, password, name) => {
-//   return (dispatch) => {
-//     let userEmail = null,
-//       loggedIn = false;
-//     // userName = null
-
-//     firebaseAuth
-//       .createUserWithEmailAndPassword(email, password)
-//       .then((result) => {
-//         firebaseAuth.onAuthStateChanged((user) => {
-//           result.user.updateProfile({
-//             displayName: name,
-//           });
-//           if (user) {
-//             userEmail = user.email;
-//             // let userName = user.displayName
-//             loggedIn = true;
-//             dispatch({
-//               type: "SIGNUP_WITH_EMAIL",
-//               payload: {
-//                 email: userEmail,
-//                 name,
-//                 isSignedIn: loggedIn,
-//               },
-//             });
-//             dispatch({
-//               type: "LOGIN_WITH_EMAIL",
-//               payload: {
-//                 email: userEmail,
-//                 name,
-//               },
-//             });
-//           }
-//         });
-//         history.push("/");
-//       })
-//       .catch((error) => {
-//         console.log(error.message);
-//       });
-//   };
-// };
-
-// export const signupWithJWT = (email, password, name) => {
-//   return (dispatch) => {
-//     axios
-//       .post("/api/authenticate/register/user", {
-//         email: email,
-//         password: password,
-//         name: name,
-//       })
+export const signupWithEmailAndPassword = (user) => {
+  return (dispatch) => {
+    authInstance
+      .post("/signup",{
+       email:user.email,
+       password:user.password,
+       accHash:user.accHash,
+       fullName:user.fullName
+      })
+      .then((response) => {
+        console.log(response)
+        if (response.data) {
+         
+          dispatch({
+            type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
+            payload: response.data,
+          });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+};
 //       .then((response) => {
 //         var loggedInUser;
-
+// console.log(response);
 //         if (response.data) {
 //           loggedInUser = response.data.user;
-
-//           localStorage.setItem("token", response.data.token);
-
+//           localStorage.setItem("auth-token", response.data.token);
 //           dispatch({
-//             type: "LOGIN_WITH_JWT",
-//             payload: { loggedInUser, loggedInWith: "jwt" },
+//             type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
+//             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
 //           });
 
 //           history.push("/");
@@ -81,27 +42,3 @@ import {authInstance} from "../../../request";
 //       .catch((err) => console.log(err));
 //   };
 // };
-
-export const signupWithEmailAndPassword = (user) => {
-  return (dispatch) => {
-    authInstance
-      .post("/signup")
-      .then((response) => {
-        var loggedInUser;
-
-        if (response.data) {
-          loggedInUser = response.data.user;
-
-          localStorage.setItem("auth-token", response.data.token);
-
-          dispatch({
-            type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
-            payload: { loggedInUser, loggedInWith: "emailAndPassword" },
-          });
-
-          history.push("/");
-        }
-      })
-      .catch((err) => console.log(err));
-  };
-};

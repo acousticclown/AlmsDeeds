@@ -50,23 +50,33 @@ class RegisterEmailAndPassword extends React.Component {
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
+            type="text"
+            placeholder="Account Hash"
+            required
+            value={this.state. accHash}
+            onChange={(e) => this.setState({accHash: e.target.value })}
+          />
+          <Label>Account Hash</Label>
+        </FormGroup>
+        <FormGroup className="form-label-group">
+          <Input
             type="password"
             placeholder="Password"
             required
             value={this.state.password}
             onChange={(e) => this.setState({ password: e.target.value })}
           />
-          <Label>Password</Label>
+             <Label>Password</Label>
         </FormGroup>
         <FormGroup className="form-label-group">
           <Input
-            type="text"
-            placeholder="Account Hash"
+            type="password"
+            placeholder="Confirm Password"
             required
-            value={this.state.accHash}
-            onChange={(e) => this.setState({ accHash: e.target.value })}
+            value={this.state.confirmPass}
+            onChange={(e) => this.setState({ confirmPass: e.target.value })}
           />
-          <Label>Account Hash</Label>
+           <Label>Confirm Password</Label>
         </FormGroup>
         <FormGroup>
           <Checkbox
