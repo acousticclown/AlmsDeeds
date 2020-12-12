@@ -29,7 +29,12 @@ const {
     else{
         console.log(AidSum);
 
-        for(let i=0;i<AidSum.length-1;i++){
+        for(let i=0;i<AidSum.length-2;i++){
+          //console.log( "Aid sum"+ AidSum[i].ReqDon[0].sum)
+          if(AidSum[i].ReqDon.length<=0){
+continue;
+          }
+else{
         let sum= Number(AidSum[i].amount) +Number(AidSum[i].ReqDon[0].sum)
          // console.log("goal sum achieved "+ sum)
          // console.log("goal achieved" +AidSum[i].ReqDon[0].sum);
@@ -48,7 +53,7 @@ const {
      // console.log("goal not achieved" );
       
     }
-
+  }
      
     }
 
@@ -72,12 +77,13 @@ const {
     
       console.log("count of demanfd fullfill  "+Demandfull );
       let response={
+        AidSum:AidSum,
         TotalAids:TotalAids,
         Demandfullfill: Demandfull,
         Demandpending:Demandpending
       }
     
-    return okResponse(res,response, "Donation has been made Successfully");
+    return okResponse(res,response, "Analysis of Demands");
 }
 
   }

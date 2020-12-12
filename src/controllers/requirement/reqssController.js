@@ -21,7 +21,7 @@ const AidInfo = async (req, res) => {
 
 
     .returning("*")
-    .withGraphFetched("[patientDetails(SelectFullName), ReqDon(DonatedSum) as Dsum]")
+    .withGraphFetched("[patientDetails(SelectFullName), ReqDon(DonatedSum)]")
     .modifiers({
       SelectFullName(builder){
         builder.select("fullName");
@@ -38,13 +38,13 @@ const AidInfo = async (req, res) => {
     }
     else{
       console.log(Aidinfo);
-        for(let i=0;i<Aidinfo.length;i++){
+        /*for(let i=0;i<Aidinfo.length;i++){
     if(Aidinfo[i].amount<=Aidinfo[i].ReqDon.Dsum){
         
     }
-    }
+    }*/
  
-  return okResponse(res, Aiddetails, "Aids details");
+  return okResponse(res, Aidinfo, "Aids details");
 
 }
 }
@@ -82,5 +82,6 @@ const AidInfo = async (req, res) => {
 
 
   module.exports = {
-    AidDetailsById
+    AidDetailsById,
+    AidInfo
     };

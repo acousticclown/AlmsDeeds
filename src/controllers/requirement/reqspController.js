@@ -31,16 +31,21 @@ const AidRequestForm = async (req, res) => {
     );
         
         if(error){ console.log("error"+error);
-          return badRequestError(res, "amount can not be fetched");}
+          return badRequestError(res, "Demand not submitted");}
 
         console.log("aid_returned  "+aidrequest_returned.aidId)
-        return okResponse(res, "Donation has been made Successfully");
+        return okResponse(res, "Demand has been made Successfully");
   }
 
   const DonateForm = async (req, res) => {
     let donatorId = req.user.id;
     //console.log(needId);
     let { amount, aidId } = req.body;
+    if(amount ==null || aidId==null||donatorId==null){
+      return badRequestError(res, "values can't be null");
+    }
+
+    else{
     console.log(req.body);
 
     let [error, donation_returned] = await to(
@@ -52,10 +57,11 @@ const AidRequestForm = async (req, res) => {
     );
 
     if(error){ console.log("error"+error);
-    return badRequestError(res, "amount can not be fetched");}
+    return badRequestError(res, "Donation unsuccesfull");}
 
     console.log("donation_returned  "+donation_returned.amount)
     return okResponse(res, "Donation has been made Successfully");
+  }
   }
 
   module.exports = {

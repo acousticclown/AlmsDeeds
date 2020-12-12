@@ -29,7 +29,7 @@ const {
     let [error, result] = await to(Users.query().where("email", email).first());
     if (error) console.log(error);
     if (result) {
-      console.log(result);
+      console.log("result is "+result);
       return badRequestError(res, " email already exists");
     }
   
@@ -72,7 +72,7 @@ const {
     let [incorrect, user_returned] = await to(
       Users.query().findOne("email", email).throwIfNotFound()
     );
-  console.log("user_returned  "+user_returned.accHash)
+  //console.log("user_returned  "+user_returned.email)
     if (incorrect) return badRequestError(res, "email does not exists");
   
     //Checking whether email is verified
