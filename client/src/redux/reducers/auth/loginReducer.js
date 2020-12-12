@@ -4,10 +4,10 @@ export const login = (state = { userRole: "" }, action) => {
       return { ...state, userRole: "admin", values: action.payload };
     }
     case "LOGOUT_WITH_EMAIL_AND_PASSWORD": {
-      return { ...state, userRole: "", values: action.payload };
+      return { ...state, userRole: "", values: [] };
     }
     case "CHANGE_ROLE": {
-      return { ...state, userRole: action.userRole };
+      return { ...state, userRole: action.userRole, values:  { loggedInWith: action.loggedInWith } };
     }
     default: {
       return state;
