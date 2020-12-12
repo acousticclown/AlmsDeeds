@@ -13,6 +13,9 @@ client/.pnp
 client/c.pnp.js
 client/package-lock.json
 client/yarn.lock
+# client/src/authServices
+
+
 
 # testing
 client/coverage
