@@ -2,7 +2,7 @@
 import { history } from "../../../history";
 // import "firebase/auth";
 // import "firebase/database";
-import axios from "axios";
+import {authInstance} from "../../../request";
 // import { config } from "../../../authServices/firebase/firebaseConfig";
 
 // Init firebase if not already initialized
@@ -82,24 +82,20 @@ import axios from "axios";
 //   };
 // };
 
-export const signupWithEmailAndPassword = (email, password, name) => {
+export const signupWithEmailAndPassword = (user) => {
   return (dispatch) => {
-    axios
-      .post("/api/authenticate/register/user", {
-        email: email,
-        password: password,
-        name: name,
-      })
+    authInstance
+      .post("/signup")
       .then((response) => {
         var loggedInUser;
 
         if (response.data) {
           loggedInUser = response.data.user;
 
-          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("auth-token", response.data.token);
 
           dispatch({
-            type: "LOGIN_WITH_EMAIL_AND_PASSWORD",
+            type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
           });
 

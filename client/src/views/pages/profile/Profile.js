@@ -44,29 +44,6 @@ class Profile extends React.Component {
               <ProfileHeader />
             </Col>
           </Row>
-          <div id="profile-info" class="w-100 rounded pt-md-3 pt-sm-50 ">
-            <Col>
-            <Card>
-        <CardBody className="p-md-3 ">
-              <Row>
-              <h4 className="mb-0 pt-md-1 pt-sm-50 pl-2">Acc. Id:<span className="text-success pl-2">udhbkw54brv43bgrvwkjw</span> </h4> 
-              </Row>
-              <Row>
-              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Name:<strong className="pl-2">John Doe</strong> </h5> 
-              </Row>
-              <Row>
-              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Email:<strong className="pl-2">john@gmail.com</strong> </h5>  
-              </Row>
-              <Row>
-              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Donations:<strong className="pl-2">5</strong> </h5> 
-              </Row>
-              <Row>
-              <h5 className="mb-0 pt-md-1 pt-sm-50 pl-2">Transactions:<strong className="pl-2">8</strong> </h5> 
-              </Row>
-              </CardBody>
-              </Card>
-            </Col>
-          </div>
           {/* <div id="profile-info">
             <Row>
               <Col lg="3" md="12">
