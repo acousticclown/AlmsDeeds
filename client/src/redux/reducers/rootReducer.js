@@ -8,6 +8,8 @@ import auth from "./auth/";
 import navbar from "./navbar/Index";
 import dataList from "./data-list/";
 import home from "./home-page/"
+import donations from "./donations/"
+
 const rootReducer = combineReducers({
   // calendar: calenderReducer,
   // emailApp: emailReducer,
@@ -18,6 +20,7 @@ const rootReducer = combineReducers({
   navbar: navbar,
   dataList: dataList,
   home: home, 
+  donations: donations
 });
 
 export default rootReducer;
