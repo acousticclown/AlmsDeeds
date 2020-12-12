@@ -10,6 +10,7 @@ import RevenueGenerated from "../components/custom/RevenueGenerated";
 import QuaterlySales from "../components/custom/QuaterlySales";
 import DonationsSlider from "../extensions/swiper/CenteredSlidesStyle1";
 import RequiredDonations from "../components/custom/RequiredDonations";
+import {getAidData} from "../redux/actions/home-page";
 
 import "../assets/scss/pages/dashboard-analytics.scss";
 import "../assets/scss/pages/faq.scss";
@@ -25,6 +26,12 @@ let $primary = "#7367F0",
   $label_color = "#e7eef7";
 
 class AnalyticsDashboard extends React.Component {
+
+  componentDidMount() {
+    console.log('Heluuuuuuu')
+    this.props.getAidData(); 
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -90,4 +97,4 @@ const mapStateToProps = (state) => ({
   userRole: state.auth.login.userRole,
 });
 
-export default connect(mapStateToProps)(AnalyticsDashboard);
+export default connect(mapStateToProps, { getAidData })(AnalyticsDashboard);

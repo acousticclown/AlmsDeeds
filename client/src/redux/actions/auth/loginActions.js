@@ -214,7 +214,7 @@ import {authInstance} from "../../../request";
 export const loginWithEmailAndPassword = (user) => {
   return (dispatch) => {
     authInstance
-      .post("/user/login", {
+      .post("/login", {
         email: user.email,
         password: user.password,
       })
@@ -229,9 +229,6 @@ export const loginWithEmailAndPassword = (user) => {
             type: "LOGIN_WITH_EMAIL_AND_PASSWORD",
             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
           });
-          console.log("12345566");
-
-          // history.push("/");
         }
       })
       .catch((err) => console.log(err));

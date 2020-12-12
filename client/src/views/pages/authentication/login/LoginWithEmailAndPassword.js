@@ -11,24 +11,15 @@ class LoginWithEmailAndPassword extends React.Component {
   state = {
     email: "demo@demo.com",
     password: "demodemo",
-    remember: false,
   };
   handleLogin = (e) => {
     e.preventDefault();
     this.props.loginWithEmailAndPassword(this.state);
-    console.log("Hello world");
-    console.log(this.props.values.userRole);
-
-    // history.push("/");
   };
-  // userRole = this.props.values.userRole
   componentDidUpdate(prevState) {
     if (this.props.values.userRole === "admin") {
       history.push("/");
     }
-    // if (this.props.userRole) {
-    //   console.log(this.props.values.userRole);
-    // }
   }
 
   render() {
@@ -61,18 +52,6 @@ class LoginWithEmailAndPassword extends React.Component {
                 <Lock size={15} />
               </div>
               <Label>Password</Label>
-            </FormGroup>
-            <FormGroup className="d-flex justify-content-between align-items-center">
-              <Checkbox
-                color="primary"
-                icon={<Check className="vx-icon" size={16} />}
-                label="Remember me"
-                defaultChecked={false}
-                onChange={this.handleRemember}
-              />
-              <div className="float-right">
-                <Link to="/pages/forgot-password">Forgot Password?</Link>
-              </div>
             </FormGroup>
             <div className="d-flex justify-content-between">
               <Button.Ripple
