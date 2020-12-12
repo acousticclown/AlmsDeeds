@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap";
-import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy";
-import { Mail, Lock, Check } from "react-feather";
+import { Mail, Lock} from "react-feather";
 import { loginWithEmailAndPassword } from "../../../../redux/actions/auth/loginActions";
 import { connect } from "react-redux";
 import { history } from "../../../../history";
