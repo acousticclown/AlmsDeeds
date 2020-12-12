@@ -75,8 +75,8 @@ const ThemeNavbar = (props) => {
             >
               <div className="bookmark-wrapper">
                 <NavbarBookmarks
-                  // sidebarVisibility={props.sidebarVisibility}
-                  // handleAppOverlay={props.handleAppOverlay}
+                  sidebarVisibility={props.sidebarVisibility}
+                  handleAppOverlay={props.handleAppOverlay}
                 />
               </div>
               {/* {props.horizontal ? (

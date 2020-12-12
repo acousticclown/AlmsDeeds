@@ -45,12 +45,20 @@ const navigationConfig = [
   },
   {
     id: "aid",
-    title: "Ask For Aid",
+    title: "Ask for Aid",
     type: "item",
     icon: <Icon.Plus size={20} />,
     permissions: ["admin", "editor"],
-    navLink: "/Aid",
+    navLink: "/aid",
   },
+  // {
+  //   id: "aid",
+  //   title: "Ask For Aid",
+  //   type: "item",
+  //   icon: <Icon.Plus size={20} />,
+  //   permissions: ["admin", "editor"],
+  //   navLink: "/Aid",
+  // },
   // {
   //   type: "groupHeader",
   //   groupTitle: "APPS",

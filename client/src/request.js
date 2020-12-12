@@ -2,10 +2,11 @@ import axios from "axios";
 
 //axios instance
 export const authInstance = axios.create({
-  baseURL: "https://voidminds-backend.herokuapp.com/api/",
+  baseURL: "https://donationsite-dapp.herokuapp.com/d_app",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
+    // "Vary": "Origin",
     Authorization: "Bearer " + localStorage.getItem("auth-token"),
   },
   validateStatus: (status) => status < 500,
@@ -28,7 +29,7 @@ authInstance.interceptors.response.use(
     const token = response.headers.authorization;
     console.log(token);
     localStorage.setItem("auth-token", token);
-    localStorage.setItem("userRole", response.data.data.userType);
+    // localStorage.setItem("userRole", response.data.data.userType);
     if (!response.data.success) {
       alert(response.data.message);
     }

@@ -117,9 +117,9 @@ class Register extends React.Component {
                       <TabPane tabId="2">
                         <RegisterFirebase />
                       </TabPane> */}
-                      <TabPane tabId="3">
+                      {/* <TabPane tabId="3">
                         <RegisterAuth0 />
-                      </TabPane>
+                      </TabPane> */}
                       <TabPane tabId="4">
                         <RegisterEmailAndPassword />
                       </TabPane>
