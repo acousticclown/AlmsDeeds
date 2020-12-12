@@ -16,9 +16,8 @@ client/yarn.lock
 client/src/redux
 client/src/@fake-db
 client/src/authServices
-client/src/pages
-client/src/components
-client/src/assets
+# client/src/pages
+# client/src/components
 
 
 # testing
