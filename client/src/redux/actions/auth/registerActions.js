@@ -103,7 +103,7 @@ export const signupWithEmailAndPassword = (email, password, name) => {
             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
           });
 
-          history.push("/verify-otp");
+          history.push("/");
         }
       })
       .catch((err) => console.log(err));

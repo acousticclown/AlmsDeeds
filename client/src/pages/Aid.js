@@ -60,13 +60,13 @@ class Aid extends Component {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="data-name">Account ID</Label>
+        <Label for="data-name">Account Hash</Label>
         <Input
           type="text"
           
-          placeholder="Account ID"
-          onChange={(e) => this.setState({ accID: e.target.value })}
-          id="data-accid"
+          placeholder="Account Hash"
+          onChange={(e) => this.setState({ accHash: e.target.value })}
+          id="data-acchash"
         />
       </FormGroup>
       <FormGroup>

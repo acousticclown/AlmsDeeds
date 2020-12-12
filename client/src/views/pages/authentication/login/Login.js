@@ -20,7 +20,7 @@ import "../../../../assets/scss/pages/authentication.scss";
 import LoginWithEmailAndPassword from "./LoginWithEmailAndPassword";
 class Login extends React.Component {
   state = {
-    activeTab: "1",
+    activeTab: "4",
   };
   toggle = (tab) => {
     if (this.state.activeTab !== tab) {

@@ -241,14 +241,14 @@ export const loginWithEmailAndPassword = (user) => {
 export const logoutWithEmailAndPassword = () => {
   return (dispatch) => {
     dispatch({ type: "LOGOUT_WITH_EMAIL_AND_PASSWORD", payload: {} });
-    history.push("/pages/login");
+    history.push("/login");
   };
 };
 
 export const logoutWithEmail = () => {
   return (dispatch) => {
     dispatch({ type: "LOGOUT_WITH_EMAIL", payload: {} });
-    history.push("/pages/login");
+    history.push("/login");
   };
 };
 

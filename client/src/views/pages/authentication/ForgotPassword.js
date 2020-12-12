@@ -57,7 +57,7 @@ class ForgotPassword extends React.Component {
                           color="primary"
                           outline
                           className="px-75 btn-block"
-                          onClick={() => history.push("/pages/login")}
+                          onClick={() => history.push("/login")}
                         >
                           Back to Login
                         </Button.Ripple>

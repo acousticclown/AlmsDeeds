@@ -79,7 +79,7 @@ class RegisterEmailAndPassword extends React.Component {
             color="primary"
             outline
             onClick={() => {
-              history.push("/pages/login");
+              history.push("/login");
             }}
           >
             Login

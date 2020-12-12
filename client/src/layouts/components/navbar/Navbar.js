@@ -3,11 +3,9 @@ import { Navbar } from "reactstrap";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { useAuth0 } from "../../../authServices/auth0/auth0Service";
-// import {
-//   logoutWithJWT,
-//   logoutWithFirebase,
-//   logoutWithEmailAndPassword,
-// } from "../../../redux/actions/auth/loginActions";
+import {
+  logoutWithEmailAndPassword
+} from "../../../redux/actions/auth/loginActions";
 import NavbarBookmarks from "./NavbarBookmarks";
 import NavbarUser from "./NavbarUser";
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg";
@@ -127,6 +125,6 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     // logoutWithJWT,
     // logoutWithFirebase,
-    // logoutWithEmailAndPassword,
+    logoutWithEmailAndPassword,
   useAuth0,
 })(ThemeNavbar);
