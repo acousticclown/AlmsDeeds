@@ -1,8 +1,5 @@
 import React from "react";
-import Sidebar from "react-sidebar";
-import ShopSidebar from "../components/custom/Sidebar";
 import ShopContent from "../components/custom/ShopContent";
-import Breacrumbs from "../components/@vuexy/breadCrumbs/BreadCrumb";
 
 import "../assets/scss/pages/app-ecommerce-shop.scss";
 
@@ -27,6 +24,7 @@ class Shop extends React.Component {
   mediaQueryChanged = () => {
     this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
   };
+
   render() {
     return (
       <React.Fragment>

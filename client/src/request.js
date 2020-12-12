@@ -25,9 +25,7 @@ authInstance.interceptors.request.use(
 
 authInstance.interceptors.response.use(
   (response) => {
-    console.log(response);
     const token = response.headers.authorization;
-    console.log(token);
     localStorage.setItem("auth-token", token);
     // localStorage.setItem("userRole", response.data.data.userType);
     if (!response.data.success) {
@@ -43,7 +41,7 @@ authInstance.interceptors.response.use(
 
 //axios instance
 export const instance = axios.create({
-  baseURL: "https://voidminds-backend.herokuapp.com/api/",
+  baseURL: "https://donationsite-dapp.herokuapp.com/d_app",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",

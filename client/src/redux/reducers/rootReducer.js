@@ -7,7 +7,7 @@ import customizer from "./customizer/";
 import auth from "./auth/";
 import navbar from "./navbar/Index";
 import dataList from "./data-list/";
-
+import home from "./home-page/"
 const rootReducer = combineReducers({
   // calendar: calenderReducer,
   // emailApp: emailReducer,
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   auth: auth,
   navbar: navbar,
   dataList: dataList,
+  home: home, 
 });
 
 export default rootReducer;
