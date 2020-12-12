@@ -12,35 +12,30 @@ import {
     Button
   } from "reactstrap"
 import {NavLink} from "react-router-dom"
+
 import Breacrumbs from "../components/@vuexy/breadCrumbs/BreadCrumb";
+import {aidRequest} from "../redux/actions/askForAid";
 
 import "../assets/scss/pages/app-ecommerce-shop.scss";
+import { connect } from "react-redux";
 
 class Aid extends Component {
-    // state = {
-    //   id: "",
-    //   name: "",
-    //   category: "Audio",
-    //   order_status: "pending",
-    //   price: "",
-    //   img: "",
-    //   popularity: {
-    //     popValue: "",
-    //   },
-    // }
-    //   handleSubmit = (obj) => {
-    //     if (this.props.data !== null) {
-    //       this.props.updateData(obj);
-    //     } else {
-    //       this.addNew = true;
-    //       this.props.addData(obj);
-    //     }
-    //     let params = Object.keys(this.props.dataParams).length
-    //       ? this.props.dataParams
-    //       : { page: 1, perPage: 4 };
-    //     this.props.handleSidebar(false);
-    //     this.props.getData(params);
-    //   }
+    state = {
+      name:"",
+      email: "",
+      category: "Medicinal Aid",
+      urgency: "neutral",
+      description:"",
+      amount:"" ,
+      image: "",
+      document:"",
+      contact_no:"",
+    }
+      handleSubmit = e => {
+        e.preventDefault();
+        console.log(this.state)
+        aidRequest(this.state);
+      }
       render() {
         return (
             <Card>
@@ -48,7 +43,7 @@ class Aid extends Component {
           <CardTitle>Apply For Aid</CardTitle>
         </CardHeader>
         <CardBody>
-          <Form>
+          <Form  action="/" onSubmit={this.handleSubmit}>
         <FormGroup>
         <Label for="data-name">Name</Label>
         <Input
@@ -57,16 +52,6 @@ class Aid extends Component {
           placeholder="Name"
           onChange={(e) => this.setState({ name: e.target.value })}
           id="data-name"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Account Hash</Label>
-        <Input
-          type="text"
-          
-          placeholder="Account Hash"
-          onChange={(e) => this.setState({ accHash: e.target.value })}
-          id="data-acchash"
         />
       </FormGroup>
       <FormGroup>
@@ -99,13 +84,13 @@ class Aid extends Component {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="data-name">Description</Label>
+        <Label for="data-urgency">Urgency</Label>
         <Input
           type="text"
           
-          placeholder="Category"
-          onChange={(e) => this.setState({ category: e.target.value })}
-          id="data-category"
+          placeholder="Urgency"
+          onChange={(e) => this.setState({ urgency: e.target.value })}
+          id="data-urgency"
         />
       </FormGroup>
       <FormGroup>
@@ -130,7 +115,7 @@ class Aid extends Component {
         />
       </FormGroup>
       
-      <Button color="primary" >
+      <Button color="primary"  type="submit" >
             Apply
           </Button>
 <NavLink to="/">
