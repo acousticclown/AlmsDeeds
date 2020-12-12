@@ -72,7 +72,7 @@ const UserDropdown = (props) => {
       <DropdownItem divider />
       <DropdownItem
         tag="a"
-        href="/pages/login"
+        href="/login"
         onClick={(e) => {
           e.preventDefault();
           if (isAuthenticated) {
@@ -93,7 +93,7 @@ const UserDropdown = (props) => {
                 return props.logoutWithFirebase();
               }
             } else {
-              history.push("/pages/login");
+              history.push("/login");
             }
           }
         }}
