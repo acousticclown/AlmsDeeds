@@ -214,7 +214,7 @@ import {authInstance} from "../../../request";
 export const loginWithEmailAndPassword = (user) => {
   return (dispatch) => {
     authInstance
-      .post("/user/login", {
+      .post("/login", {
         email: user.email,
         password: user.password,
       })
@@ -229,9 +229,6 @@ export const loginWithEmailAndPassword = (user) => {
             type: "LOGIN_WITH_EMAIL_AND_PASSWORD",
             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
           });
-          console.log("12345566");
-
-          // history.push("/");
         }
       })
       .catch((err) => console.log(err));
@@ -240,7 +237,9 @@ export const loginWithEmailAndPassword = (user) => {
 
 export const logoutWithEmailAndPassword = () => {
   return (dispatch) => {
-    dispatch({ type: "LOGOUT_WITH_EMAIL_AND_PASSWORD", payload: {} });
+    dispatch({ type: "LOGOUT_WITH_EMAIL_AND_PASSWORD" });
+    
+    localStorage.removeItem('auth-token');
     history.push("/login");
   };
 };
@@ -252,13 +251,6 @@ export const logoutWithEmail = () => {
   };
 };
 
-// export const logoutWithFirebase = (user) => {
-//   return (dispatch) => {
-//     dispatch({ type: "LOGOUT_WITH_FIREBASE", payload: {} });
-//     history.push("/pages/login");
-//   };
-// };
-
-export const changeRole = (role) => {
-  return (dispatch) => dispatch({ type: "CHANGE_ROLE", userRole: role });
+export const changeRole = (role, loggedInWith) => {
+  return (dispatch) => dispatch({ type: "CHANGE_ROLE", userRole: role, loggedInWith });
 };

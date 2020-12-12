@@ -32,7 +32,6 @@ const navigationConfig = [
     title: "Home",
     type: "item",
     icon: <Icon.Home size={20} />,
-    permissions: ["admin", "editor"],
     navLink: "/",
   },
   {

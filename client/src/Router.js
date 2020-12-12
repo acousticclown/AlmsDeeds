@@ -6,7 +6,7 @@ import Spinner from "./components/@vuexy/spinner/Loading-spinner";
 import knowledgeBaseCategory from "./views/pages/knowledge-base/Category";
 import knowledgeBaseQuestion from "./views/pages/knowledge-base/Questions";
 import { ContextLayout } from "./utility/context/Layout";
-
+import {changeRole} from "./redux/actions/auth/loginActions"
 // Route-based code splitting
 const listView = lazy(() => import("./views/ui-elements/data-list/ListView"));
 const thumbView = lazy(() => import("./views/ui-elements/data-list/ThumbView"));
@@ -82,8 +82,13 @@ const mapStateToProps = (state) => {
 };
 
 const AppRoute = connect(mapStateToProps)(RouteConfig);
-
 class AppRouter extends React.Component {
+  
+  componentDidMount() {
+    if(localStorage.getItem('auth-token')) {
+      this.props.changeRole('admin', "emailAndPassword")
+    }
+  }
   render() {
     return (
       // Set the directory path if you are deploying in sub-folder
@@ -164,4 +169,4 @@ class AppRouter extends React.Component {
   }
 }
 
-export default AppRouter;
+export default connect(null, { changeRole })(AppRouter);
