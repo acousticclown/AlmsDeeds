@@ -29,7 +29,7 @@ class Users extends Model {
         modelClass:Requirements,
         join:{
           from:"user.id",
-          to:"patient.patientId"
+          to:"needs.patientId"
         }
       },
       

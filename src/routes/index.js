@@ -5,8 +5,10 @@ const ReqController=require("../controllers/index").ReqController;
 const ReqssController=require('../controllers/index').ReqssController;
 const ReqspController=require("../controllers/index").ReqspController;
 const UserController=require("../controllers/index").UserController;
+const DonationController=require("../controllers/index").DonationController
 
 const VerifyUserJWT=require("../middleware/jwt").VerifyUserJWT;
+const upload = require("../middleware/upload");
 
 //CHECK ROUTES
 router.get("/check",VerifyUserJWT,(req,res)=>{
@@ -22,6 +24,9 @@ router.get("/checkHeroku",(req,res)=>{
     res.send("Welcome ! Heroku deployement is perfectly done")
 });
 
+router.get("/check2",(req,res)=>{
+    res.send("Welcome ! Heroku deployement is perfectly done 2")
+});
 
 //AUTHENTICATION routes
 router.post('/signup',UserAuthController.SignUp);
@@ -30,18 +35,37 @@ router.post('/changeuserpassword',VerifyUserJWT,UserAuthController.ChangePasswor
 
 //AID routes
 router.get('/aidAnalysis',ReqController.AidAnalysis);
+router.get('/aidInfo',ReqssController.AidInfo);
+router.post('/aidDetailsById',ReqssController.AidDetailsById);
+
+//aid Details by Id
 router.get('/aidDetailsById',ReqssController.AidDetailsById);
+
+// user profile data
+router.get('/userDetails',VerifyUserJWT,UserController.userDetails);
+
 
 
 //Dashboard routes
-router.get('/userDetails',UserController.userDetails);
+// no of donation, transaction, total user, demands
+router.get('/aidAnalysis',ReqController.AidAnalysis);
+
+//DEmands fullfill, remaining demanads
 router.get('/analytics',UserController.Analytics);
 
-//AID Request routes
+// to upload USER profile image 
+router.post('/imageUpload',VerifyUserJWT,upload.single("image"),UserController.uploadImage);
+
+
+//AID Request form 
 router.post('/aidreq',VerifyUserJWT,ReqspController.AidRequestForm);
 
-//Donate routes
+//Donate routes after donation route call
 router.post('/donate',VerifyUserJWT,ReqspController.DonateForm);
 
+
+//Donation Details routes
+router.get('/recentDonation',DonationController.RecentDonation);
+router.get('/topDonation',DonationController.TopDonation);
 
 module.exports = router;

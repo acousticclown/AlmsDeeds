@@ -39,7 +39,7 @@ const navigationConfig = [
     title: "Donate",
     type: "item",
     icon: <Icon.DollarSign size={20} />,
-    permissions: ["admin", "editor"],
+    permissions: ["admin"],
     navLink: "/support",
   },
   {
@@ -47,7 +47,7 @@ const navigationConfig = [
     title: "Ask for Aid",
     type: "item",
     icon: <Icon.Plus size={20} />,
-    permissions: ["admin", "editor"],
+    permissions: ["admin"],
     navLink: "/aid",
   },
   // {

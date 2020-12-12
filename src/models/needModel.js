@@ -15,6 +15,7 @@ class Requirements extends Model {
       ReqDon:{
         relation:Model.HasManyRelation,
         modelClass:Donate,
+        
         join:{
           from:"needs.aidId",
           to:"donator.aidId"

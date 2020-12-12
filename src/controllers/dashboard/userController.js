@@ -8,7 +8,15 @@ const {
   const Users = require("../../models/userModel");
   const Requirements = require("../../models/needModel");  
   const Donate = require("../../models/donateModel");
- 
+  var cloudinary = require('cloudinary').v2;
+
+  cloudinary.config({ 
+      
+      cloud_name: 'nishicloud', 
+      api_key: '792541339391969', 
+      api_secret: 'ZNY1ZEg2UCzRVwf07v3MYbFK6ZY' 
+    });
+  
 
   const userDetails = async (req, res) => {
     let userId= req.user.id;
@@ -67,9 +75,63 @@ const {
      }
    };
 
+   const uploadImage= async (req, res) => {
+    let picUrl= req.file;
+
+    if (picurl== undefined) {
+      //return res.send(`You must select a file.`); 
+      console.log("no file found");
+      return badRequestError(res, "Upload an Image");
+  
+    }
+
+   /* cloudinary.uploader.upload(body.path, function(error, result) 
+    {
+        console.log(result, error)
+        //console.log(result.url);
+        var imageurl=result.url;
+        const [error,imageUpload ] = await to(
+          Users.query().insert({image:imageurl}).where("id",userId)
+          .returning("*")
+       
+        )
+
+        
+    
+    });*/
+  
+   
+   
+    /*const [error,userDetails ] = await to(
+         Users.query().select("fullName","email","accHash","image").where("id",userId)
+         .returning("*")
+         .withGraphFetched("[uDonations(totalSum) , uNeeds(totalReq)]")
+         .modifiers({
+             totalSum(builder) {
+             builder.sum("amount").groupBy("donatorId");
+           },
+           totalReq(builder){
+               builder.select("patientId").count("patientId").groupBy("patientId");
+           }
+
+         })
+     );*/
+     console.log("ERROR IS "+error);
+     if (error){ return badRequestError(res, "unable to fetch");}
+     else{
+        return okResponse(res, imageUpload, "No of Demands fullfill");
+ 
+     }
+    }
+   
+
+
+
+
    
    module.exports = {
     userDetails  ,
-    Analytics 
+    Analytics ,
+    uploadImage
  };
  
