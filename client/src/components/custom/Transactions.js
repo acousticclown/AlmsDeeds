@@ -9,7 +9,7 @@ class OrdersReceived extends React.Component {
       <StatisticsCard
         icon={<Package className="warning" size={22} />}
         iconBg="warning"
-        stat="97.5K"
+        stat="8"
         statTitle="Transactions Made"
         options={ordersReceived}
         series={ordersReceivedSeries}

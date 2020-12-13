@@ -9,7 +9,7 @@ class RevenueGenerated extends React.Component {
       <StatisticsCard
         icon={<CreditCard className="success" size={22} />}
         iconBg="success"
-        stat="97.5k"
+        stat="9 Ethers"
         statTitle="Amount Donated"
         options={revenueGenerated}
         series={revenueGeneratedSeries}
