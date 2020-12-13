@@ -41,7 +41,7 @@
     -->
     <script>
       const initPayButton = () => {
-    document.getElementByClass('pay-button').onClick(() => {
+    document.getElementByClass('pay-button').onclick = () => {
       // paymentAddress is where funds will be send to
       const paymentAddress = document.getElementByClass('act').value;
       const amountEth = document.getElementByClass('amt').value;
@@ -56,7 +56,7 @@
           console.log('Payment successful', transactionId)
         }
       })
-    })
+    }
   }
     </script>
     <script>
