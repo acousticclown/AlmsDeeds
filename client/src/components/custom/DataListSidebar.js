@@ -135,6 +135,7 @@ class DataListSidebar extends Component {
               placeholder="Account ID"
               onChange={(e) => this.setState({ accID: e.target.value })}
               id="data-name"
+              className="act"
             />
           </FormGroup>
           <FormGroup>
@@ -145,11 +146,16 @@ class DataListSidebar extends Component {
               placeholder="Amount"
               onChange={(e) => this.setState({ amount: e.target.value })}
               id="data-name"
+              className="amt"
             />
           </FormGroup>
         </PerfectScrollbar>
         <div className="data-list-sidebar-footer px-2 d-flex justify-content-start align-items-center mt-1">
-          <Button color="primary" onClick={() => handleSidebar(true)}>
+          <Button
+            color="primary"
+            className="pay-button"
+            onClick={() => handleSidebar(true)}
+          >
             Transfer
           </Button>
           <Button
