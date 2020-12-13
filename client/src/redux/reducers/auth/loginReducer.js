@@ -1,7 +1,7 @@
 export const login = (state = { userRole: "" }, action) => {
   switch (action.type) {
     case "LOGIN_WITH_EMAIL_AND_PASSWORD": {
-      return { ...state, userRole: "admin", values: action.payload };
+      return { ...state, userRole: "", values: action.payload };
     }
     case "LOGOUT_WITH_EMAIL_AND_PASSWORD": {
       return { ...state, userRole: "", values: [] };
