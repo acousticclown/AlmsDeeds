@@ -1,10 +1,11 @@
 import {instance } from "../../../request"
 
 export const getAidData = () => {
-    return (dispatch) => {
-      instance
-        .get("/aidAnalysis")
-        .then((response) => {
+  return (dispatch) => {
+    instance
+    .get("/aidAnalysis")
+    .then((response) => {
+          console.log(response)
           if (response.data.data) {
   
             dispatch({

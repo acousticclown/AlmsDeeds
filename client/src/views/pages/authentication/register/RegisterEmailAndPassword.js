@@ -17,12 +17,7 @@ class RegisterEmailAndPassword extends React.Component {
 
   handleRegister = (e) => {
     e.preventDefault();
-    this.props.signupWithEmailAndPassword(
-      this.state.email,
-      this.state.password,
-      this.state.fullName,
-      this.state.accHash,
-    );
+    this.props.signupWithEmailAndPassword(this.state);
   };
 
   render() {
