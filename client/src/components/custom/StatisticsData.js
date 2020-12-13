@@ -50,7 +50,7 @@ export const subscribersGained = {
 export const subscribersGainedSeries = [
   {
     name: "Regiterations",
-    data: [28, 40, 36, 52, 38, 60, 55]
+    data: [0, 2, 3, 5, 6, 8]
   }
 ]
 
@@ -106,7 +106,7 @@ export const revenueGenerated = {
 export const revenueGeneratedSeries = [
   {
     name: "Amount",
-    data: [350, 275, 400, 300, 350, 300, 450]
+    data: [1, 1, 0.5, 2, 3, 0.5, 1]
   }
 ]
 
@@ -162,7 +162,7 @@ export const quaterlySales = {
 export const quaterlySalesSeries = [
   {
     name: "Donors",
-    data: [10, 15, 7, 12, 3, 16]
+    data: [0, 1, 2, 3, 5]
   }
 ]
 
@@ -218,6 +218,6 @@ export const ordersReceived = {
 export const ordersReceivedSeries = [
   {
     name: "Transactions",
-    data: [10, 15, 8, 15, 7, 12, 8]
+    data: [1, 2, 0, 1, 2, 1, 1]
   }
 ]

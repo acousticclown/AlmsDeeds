@@ -20,34 +20,34 @@ const CenteredSliderStyle1 = () => {
       <CardBody>
         <Swiper {...params}>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Shivansh Pratap </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 1 Ethers   </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Nishi Patodi </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 1 Ethers </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Aman Khubani </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 0.5 Ethers </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Sandeep Singh Gour </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 2 Ethers   </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Aman Khubani</span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 3 Ethers   </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
           <div className="swiper-slide  rounded swiper-shadow">
-            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> John Doe </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: Rs 3000   </span>
-            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Category</span>
+            <span className="swiper-text pt-md-0 pt-sm-50 d-block"> Anvi Jain </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">    Donated: 0.5 Ethers  </span>
+            <span className="swiper-text pt-md-1 pt-sm-50 d-block ">For : Medicinal Aid</span>
           </div>
 
         </Swiper>
