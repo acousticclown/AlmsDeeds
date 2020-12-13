@@ -46,10 +46,10 @@ class DetailPage extends React.Component {
           <CardBody className="pb-0">
             <Row className="mb-5 mt-2">
               <Col className="d-flex flex-column mb-2 mb-md-0" sm="12" md="5">
-                <h3>Mike Ross</h3>
+                <h3>Aman Khubani</h3>
                 <hr />
                 <div className="d-flex flex-column">
-                  <span className="text-muted">Email: mike.ross@gmail.com</span>
+                  <span className="text-muted">Email: aman.khubani@gmail.com</span>
                   <span className="text-muted">Contact: 9131299848</span>
                 </div>
                 <SessionByDevice
@@ -63,7 +63,7 @@ class DetailPage extends React.Component {
               </Col>
               <Col md="7" sm="12">
                 <div className="d-flex flex-wrap">
-                  <h3 className="text-primary">$200</h3>
+                  <h3 className="text-primary">500000</h3>
                 </div>
                 <hr />
                 <p>

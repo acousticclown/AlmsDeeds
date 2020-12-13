@@ -120,7 +120,7 @@ class DataListConfig extends Component {
   }
 
   handleRowsPerPage = (value) => {
-    let { parsedFilter, getData } = this.props;
+    let { getData } = this.props;
     let page = 1;
     history.push(`/data-list/list-view?page=${1}&perPage=${4}`);
     this.setState({ rowsPerPage: 4 });
@@ -128,18 +128,14 @@ class DataListConfig extends Component {
   };
 
   handlePagination = (page) => {
-    let { parsedFilter, getData } = this.props;
+    let {  getData } = this.props;
     let perPage = 4;
-    // let urlPrefix = "/data-list/list-view/";
-    // history.push(
-    //   `${urlPrefix}list-view?page=${page.selected + 1}&perPage=${perPage}`
-    // );
     getData({ page: page.selected + 1, perPage: perPage });
     this.setState({ currentPage: page.selected });
   };
 
   render() {
-    let { columns, data, allData, totalPages, rowsPerPage, value } = this.state;
+    let { columns, data, allData, value } = this.state;
     return (
       <div className="data-list list-view">
         <DataTable

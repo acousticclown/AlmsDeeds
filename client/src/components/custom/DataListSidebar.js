@@ -97,11 +97,6 @@ class DataListSidebar extends Component {
       name,
       accID,
       amount,
-      category,
-      order_status,
-      price,
-      popularity,
-      img,
     } = this.state;
     return (
       <div
@@ -131,6 +126,7 @@ class DataListSidebar extends Component {
             <Label for="data-name">Account ID</Label>
             <Input
               type="text"
+              className="act"
               value={accID}
               placeholder="Account ID"
               onChange={(e) => this.setState({ accID: e.target.value })}
@@ -141,6 +137,7 @@ class DataListSidebar extends Component {
             <Label for="data-name">Amount</Label>
             <Input
               type="text"
+              className="amt"
               value={amount}
               placeholder="Amount"
               onChange={(e) => this.setState({ amount: e.target.value })}
@@ -149,7 +146,7 @@ class DataListSidebar extends Component {
           </FormGroup>
         </PerfectScrollbar>
         <div className="data-list-sidebar-footer px-2 d-flex justify-content-start align-items-center mt-1">
-          <Button color="primary" onClick={() => handleSidebar(true)}>
+          <Button className="pay-button" color="primary" onClick={() => handleSidebar(true)}>
             Transfer
           </Button>
           <Button

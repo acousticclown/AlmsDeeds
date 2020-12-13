@@ -18,7 +18,7 @@ class SalesCard extends React.Component {
             </div>
           </div>
           <div className="award-info text-center">
-            <h1 className="mb-2 text-white">Welcome John,</h1>
+            <h1 className="mb-2 text-white">Welcome User,</h1>
             <p className="m-auto mb-0 w-75">
               Your presence here at <strong>AlmsDeeds</strong> is acknowledged and appreciated.
             </p>

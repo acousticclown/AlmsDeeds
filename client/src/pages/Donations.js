@@ -51,4 +51,4 @@ const mapStateToProps= (state) => ({
   donations: state.donations.donations.data
 })
 
-export default connect(mapStateToProps, getDonations)(Shop);
+export default connect(mapStateToProps, {getDonations})(Shop);
