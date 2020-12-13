@@ -42,11 +42,6 @@ class DetailPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Breacrumbs
-          breadCrumbTitle="Product Detail"
-          breadCrumbParent="eCommerce"
-          breadCrumbActive="Product Detail"
-        />
         <Card className="overflow-hidden app-ecommerce-details">
           <CardBody className="pb-0">
             <Row className="mb-5 mt-2">

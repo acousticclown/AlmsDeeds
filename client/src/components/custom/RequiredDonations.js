@@ -145,21 +145,6 @@ class DataListConfig extends Component {
         <DataTable
           columns={columns}
           data={value.length ? allData : data}
-          pagination
-          paginationServer
-          paginationComponent={() => (
-            <ReactPaginate
-              previousLabel={<ChevronLeft size={15} />}
-              nextLabel={<ChevronRight size={15} />}
-              breakLabel="..."
-              breakClassName="break-me"
-              pageCount={totalPages}
-              containerClassName="vx-pagination separated-pagination pagination-end pagination-sm mb-0 mt-2"
-              activeClassName="active"
-              forcePage={0}
-              onPageChange={(page) => this.handlePagination(page)}
-            />
-          )}
           noHeader
           responsive
           pointerOnHover
