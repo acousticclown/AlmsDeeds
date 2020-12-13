@@ -25,20 +25,4 @@ export const signupWithEmailAndPassword = (user) => {
       .catch((err) => console.log(err));
   };
 };
-//       .then((response) => {
-//         var loggedInUser;
-// console.log(response);
-//         if (response.data) {
-//           loggedInUser = response.data.user;
-//           localStorage.setItem("auth-token", response.data.token);
-//           dispatch({
-//             type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
-//             payload: { loggedInUser, loggedInWith: "emailAndPassword" },
-//           });
 
-//           history.push("/");
-//         }
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };

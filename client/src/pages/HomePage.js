@@ -30,6 +30,7 @@ class AnalyticsDashboard extends React.Component {
   componentDidMount = async () => {
     await this.props.getAidData(); 
     await this.props.getDashboardData(); 
+    console.log(this.props)
   }
 
   render() {
