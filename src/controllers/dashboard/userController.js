@@ -77,30 +77,45 @@ const {
 
    const uploadImage= async (req, res) => {
     let picUrl= req.file;
+    let id = req.user.id;
 
-    if (picurl== undefined) {
+    if (picUrl== undefined) {
       //return res.send(`You must select a file.`); 
       console.log("no file found");
       return badRequestError(res, "Upload an Image");
   
     }
 
-   /* cloudinary.uploader.upload(body.path, function(error, result) 
+   cloudinary.uploader.upload(picUrl.path,  function(error, result) 
     {
         console.log(result, error)
         //console.log(result.url);
         var imageurl=result.url;
-        const [error,imageUpload ] = await to(
-          Users.query().insert({image:imageurl}).where("id",userId)
+       
+      /* const [error2,imageUpload ] = await to(
+          Users.query().insert({image:imageurl}).where("id",id)
           .returning("*")
        
         )
-
-        
+        console.log(imageUpload);
+        */
+       
     
-    });*/
-  
+    });
+   /* const [error,imageUpload ] = await to(
+      Users.query().insert({image:imageurl}).where("id",id)
+      .returning("*")
    
+    )*/
+
+   
+    console.log("ERROR IS "+imageUpload);
+ if (error){ return badRequestError(res, "Error while Uploading ");}
+ else{
+    //return okResponse(res, imageUpload, "Succesfully image uploaded");
+
+ }
+
    
     /*const [error,userDetails ] = await to(
          Users.query().select("fullName","email","accHash","image").where("id",userId)
@@ -116,12 +131,12 @@ const {
 
          })
      );*/
-     console.log("ERROR IS "+error);
-     if (error){ return badRequestError(res, "unable to fetch");}
+   /*  console.log("ERROR IS "+error);
+     if (error){ return badRequestError(res, "Error while Uploading ");}
      else{
-        return okResponse(res, imageUpload, "No of Demands fullfill");
+        return okResponse(res, imageUpload, "Succesfully image uploaded");
  
-     }
+     }*/
     }
    
 

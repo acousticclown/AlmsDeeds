@@ -28,9 +28,8 @@ let $primary = "#7367F0",
 class AnalyticsDashboard extends React.Component {
 
   componentDidMount = async () => {
-    await this.props.getAidData(); 
-    await this.props.getDashboardData(); 
-    console.log(this.props)
+   const aidData= await this.props.getAidData(); 
+  const dashData= await this.props.getDashboardData(); 
   }
 
   render() {

@@ -35,11 +35,10 @@ router.post('/changeuserpassword',VerifyUserJWT,UserAuthController.ChangePasswor
 
 //AID routes
 router.get('/aidAnalysis',ReqController.AidAnalysis);
-router.get('/aidInfo',ReqssController.AidInfo);
-router.post('/aidDetailsById',ReqssController.AidDetailsById);
-
+router.get('/aidInfo/:pgno/:size',ReqssController.AidInfo);
+//
 //aid Details by Id
-router.get('/aidDetailsById',ReqssController.AidDetailsById);
+router.post('/aidDetailsById',ReqssController.AidDetailsById);
 
 // user profile data
 router.get('/userDetails',VerifyUserJWT,UserController.userDetails);
