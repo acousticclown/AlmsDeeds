@@ -3,7 +3,7 @@ import {instance} from "../../../request";
 export const getDonations = () => {
   return (dispatch) => {
     instance
-      .get("/aidInfo/1/8")
+      .get("/aidInfo/1/2")
       .then((response) => {
           console.log(response)
         if (response.data.data) {
