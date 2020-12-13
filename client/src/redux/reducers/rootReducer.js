@@ -8,12 +8,8 @@ import auth from "./auth/";
 import navbar from "./navbar/Index";
 import dataList from "./data-list/";
 import home from "./home-page/"
-<<<<<<< HEAD
 import donations from "./donations/"
-
-=======
 import aidRequest from "./askForAid/" 
->>>>>>> d22bdfcc7bb6600a2b6a4e38f0d1446890fb1eaf
 const rootReducer = combineReducers({
   // calendar: calenderReducer,
   // emailApp: emailReducer,
@@ -24,11 +20,8 @@ const rootReducer = combineReducers({
   navbar: navbar,
   dataList: dataList,
   home: home, 
-<<<<<<< HEAD
-  donations: donations
-=======
+  donations: donations,
   aidRequest: aidRequest,
->>>>>>> d22bdfcc7bb6600a2b6a4e38f0d1446890fb1eaf
 });
 
 export default rootReducer;
