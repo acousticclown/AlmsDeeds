@@ -26,14 +26,14 @@ class TableContent extends React.Component {
               Critical
             </div>
           </div>
-          <h4 className="mt-3">Donators</h4>
+          <h4 className="mt-3">Top Donators</h4>
           <div className="supporter-details mt-2">
             <div className="supporter-img d-inline-block">
               <img className="rounded-circle" src={img1} alt="Avatar" />
             </div>
             <div className="supporter-info d-inline-block">
-              <div className="font-weight-bold">Boyce Shene</div>
-              <small>Web Developer</small>
+              <div className="font-weight-bold">Aman Khubani</div>
+  
             </div>
           </div>
           <div className="supporter-details mt-2">
@@ -41,8 +41,8 @@ class TableContent extends React.Component {
               <img className="rounded-circle" src={img2} alt="Avatar" />
             </div>
             <div className="supporter-info d-inline-block">
-              <div className="font-weight-bold">Margie Sevy</div>
-              <small>Web Designer</small>
+              <div className="font-weight-bold">Sandeep Singh Gour</div>
+            
             </div>
           </div>
           <div className="supporter-details mt-2">
@@ -50,8 +50,8 @@ class TableContent extends React.Component {
               <img className="rounded-circle" src={img3} alt="Avatar" />
             </div>
             <div className="supporter-info d-inline-block">
-              <div className="font-weight-bold">Cyndi Navas</div>
-              <small>Web Developer</small>
+              <div className="font-weight-bold">Nishi Patodi</div>
+  
             </div>
           </div>
           <div className="supporter-details mt-2">
@@ -59,8 +59,8 @@ class TableContent extends React.Component {
               <img className="rounded-circle" src={img4} alt="Avatar" />
             </div>
             <div className="supporter-info d-inline-block">
-              <div className="font-weight-bold">Chi Petrusky</div>
-              <small>Web Developer</small>
+              <div className="font-weight-bold">Shivansh Pratap</div>
+  
             </div>
           </div>
           <div className="supporter-details mt-2">
@@ -68,8 +68,8 @@ class TableContent extends React.Component {
               <img className="rounded-circle" src={img5} alt="Avatar" />
             </div>
             <div className="supporter-info d-inline-block">
-              <div className="font-weight-bold">Shanel Dumag</div>
-              <small>Web Designer</small>
+              <div className="font-weight-bold">Anvi Jain</div>
+            
             </div>
           </div>
         </CardBody>
