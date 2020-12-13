@@ -6,7 +6,6 @@ import {
 } from "react-feather";
 import {connect} from "react-redux"
 import Sidebar from "../components/custom/DataListSidebar";
-import Breacrumbs from "../components/@vuexy/breadCrumbs/BreadCrumb";
 import classnames from "classnames";
 import SessionByDevice from "../components/custom/SessionByDevice";
 import "swiper/css/swiper.css";

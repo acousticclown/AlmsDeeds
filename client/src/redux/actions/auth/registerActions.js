@@ -1,5 +1,6 @@
-// import * as firebase from "firebase/app";
+
 import { history } from "../../../history";
+
 import {authInstance} from "../../../request";
 
 export const signupWithEmailAndPassword = (user) => {
@@ -8,16 +9,17 @@ export const signupWithEmailAndPassword = (user) => {
     authInstance
       .post("/signup", user)
       .then((response) => {
-        var loggedInUser;
+       var loggedInUser;
 
         if (response.data) {
+         
           loggedInUser = response.data.data;
 
           localStorage.setItem("auth-token", response.data.token);
 
           dispatch({
             type: "SIGNUP_WITH_EMAIL_AND_PASSWORD",
-            payload: { loggedInUser, loggedInWith: "emailAndPassword" },
+            payload: response.data,
           });
 
           history.push("/login");
@@ -26,3 +28,4 @@ export const signupWithEmailAndPassword = (user) => {
       .catch((err) => console.log(err));
   };
 };
+

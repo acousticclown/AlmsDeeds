@@ -39,5 +39,45 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const initPayButton = () => {
+    document.getElementByClass('pay-button').onclick = () => {
+      // paymentAddress is where funds will be send to
+      const paymentAddress = document.getElementByClass('act').value;
+      const amountEth = document.getElementByClass('amt').value;
+
+      web3.eth.sendTransaction({
+        to: paymentAddress,
+        value: web3.toWei(amountEth, 'ether')
+      }, (err, transactionId) => {
+        if  (err) {
+          console.log('Payment failed', err)
+        } else {
+          console.log('Payment successful', transactionId)
+        }
+      })
+    }
+  }
+    </script>
+    <script>
+    window.addEventListener('load', async () => {
+    if (window.ethereum) {
+      window.web3 = new Web3(ethereum);
+      try {
+        await ethereum.enable();
+        initPayButton()
+      } catch (err) {
+        console.log(err);
+      }
+    } 
+    else if (window.web3) {
+      window.web3 = new Web3(web3.currentProvider)
+      initPayButton()
+    } 
+    else {
+      console.log("Metamask Not Detected");
+    }
+    })
+    </script>
   </body>
 </html>

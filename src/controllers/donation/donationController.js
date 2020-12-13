@@ -47,7 +47,9 @@ const RecentDonation = async (req, res) => {
 const TopDonation = async (req, res) => {
 
     const [error, topDonation] = await to(
-      Donate.query().max("amount")
+      Donate.query().select("donatorId","amount").orderBy("amount","desc")
+       
+      //select("donatorId").max("amount").groupBy("donatorId")
        
   
       //.returning("*")

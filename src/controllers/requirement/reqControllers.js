@@ -29,7 +29,7 @@ const {
     else{
         console.log(AidSum);
 
-        for(let i=0;i<AidSum.length-2;i++){
+        for(let i=0;i<AidSum.length;i++){
           //console.log( "Aid sum"+ AidSum[i].ReqDon[0].sum)
           if(AidSum[i].ReqDon.length<=0){
 continue;
@@ -77,7 +77,7 @@ else{
     
       console.log("count of demanfd fullfill  "+Demandfull );
       let response={
-        AidSum:AidSum,
+       // AidSum:AidSum,
         TotalAids:TotalAids,
         Demandfullfill: Demandfull,
         Demandpending:Demandpending
