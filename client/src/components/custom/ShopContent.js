@@ -9,27 +9,12 @@ import {
   PaginationItem,
   PaginationLink,
 } from "reactstrap";
-import { Search, ChevronLeft, ChevronRight, Menu } from "react-feather";
-import { data } from "./shopData";
+import { ChevronLeft, ChevronRight} from "react-feather";
 import { Link } from "react-router-dom";
 
 import CustomersChart from "./Customers";
 
 import "../../assets/scss/plugins/forms/react-select/_react-select.scss";
-const sortOptions = [
-  {
-    value: "featured",
-    label: "Critical",
-  },
-  {
-    value: "lowest",
-    label: "Urgent",
-  },
-  {
-    value: "highest",
-    label: "Neutral",
-  },
-];
 
 let $primary = "#7367F0",
   $danger = "#EA5455",
@@ -45,9 +30,9 @@ class ShopContent extends React.Component {
   };
 
   render() {
-    let renderProducts = data.map((product, i) => {
+    let renderProducts = this.props.donations.map((person, i) => {
       return (
-        <Link to={`/support/${product.id}`}>
+        <Link to={`/support/${person.aidId}`}>
           <CustomersChart
             primary={$primary}
             warning={$warning}
@@ -55,10 +40,10 @@ class ShopContent extends React.Component {
             primaryLight={$primary_light}
             warningLight={$warning_light}
             dangerLight={$danger_light}
-            name={product.name}
-            urgency={product.urgency}
-            collectedAmount={product.collectedAmount}
-            remainingAmount={product.remainingAmount}
+            name={person.patientDetails.fullName}
+            urgency={person.urgency}
+            collectedAmount={5000}
+            remainingAmount={2000}
           />
         </Link>
       );

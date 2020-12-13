@@ -12,35 +12,28 @@ import {
     Button
   } from "reactstrap"
 import {NavLink} from "react-router-dom"
+
 import Breacrumbs from "../components/@vuexy/breadCrumbs/BreadCrumb";
+import {aidRequest} from "../redux/actions/askForAid";
 
 import "../assets/scss/pages/app-ecommerce-shop.scss";
+import { connect } from "react-redux";
 
 class Aid extends Component {
-    // state = {
-    //   id: "",
-    //   name: "",
-    //   category: "Audio",
-    //   order_status: "pending",
-    //   price: "",
-    //   img: "",
-    //   popularity: {
-    //     popValue: "",
-    //   },
-    // }
-    //   handleSubmit = (obj) => {
-    //     if (this.props.data !== null) {
-    //       this.props.updateData(obj);
-    //     } else {
-    //       this.addNew = true;
-    //       this.props.addData(obj);
-    //     }
-    //     let params = Object.keys(this.props.dataParams).length
-    //       ? this.props.dataParams
-    //       : { page: 1, perPage: 4 };
-    //     this.props.handleSidebar(false);
-    //     this.props.getData(params);
-    //   }
+    state = {
+      category: "Medicinal Aid",
+      urgency: "neutral",
+      description:"",
+      amount:"" ,
+      image: "",
+      document:"",
+      contact_no:"",
+    }
+      handleSubmit = e => {
+        e.preventDefault();
+        console.log(this.state)
+        this.props.aidRequest(this.state);
+      }
       render() {
         return (
             <Card>
@@ -48,37 +41,8 @@ class Aid extends Component {
           <CardTitle>Apply For Aid</CardTitle>
         </CardHeader>
         <CardBody>
-          <Form>
-        <FormGroup>
-        <Label for="data-name">Name</Label>
-        <Input
-          type="text"
-          
-          placeholder="Name"
-          onChange={(e) => this.setState({ name: e.target.value })}
-          id="data-name"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Account Hash</Label>
-        <Input
-          type="text"
-          
-          placeholder="Account Hash"
-          onChange={(e) => this.setState({ accHash: e.target.value })}
-          id="data-acchash"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Email</Label>
-        <Input
-          type="email"
-          
-          placeholder="Email"
-          onChange={(e) => this.setState({ email: e.target.value })}
-          id="data-email"
-        />
-      </FormGroup>
+          <Form  action="/" onSubmit={this.handleSubmit}>
+    
       <FormGroup>
         <Label for="data-name">Contact No.</Label>
         <Input
@@ -99,13 +63,23 @@ class Aid extends Component {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="data-name">Description</Label>
+        <Label for="data-name">Amount</Label>
+        <Input
+          type="text"
+         
+          placeholder="Amount in Ether"
+          onChange={(e) => this.setState({ amount: e.target.value })}
+          id="data-name"
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="data-urgency">Urgency</Label>
         <Input
           type="text"
           
-          placeholder="Category"
-          onChange={(e) => this.setState({ category: e.target.value })}
-          id="data-category"
+          placeholder="Urgency"
+          onChange={(e) => this.setState({ urgency: e.target.value })}
+          id="data-urgency"
         />
       </FormGroup>
       <FormGroup>
@@ -119,18 +93,9 @@ class Aid extends Component {
           id="data-reason"
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="data-name">Amount</Label>
-        <Input
-          type="text"
-         
-          placeholder="Amount"
-          onChange={(e) => this.setState({ amount: e.target.value })}
-          id="data-name"
-        />
-      </FormGroup>
       
-      <Button color="primary" >
+      
+      <Button color="primary"  type="submit" >
             Apply
           </Button>
 <NavLink to="/">
@@ -146,4 +111,13 @@ class Aid extends Component {
       );
   }
 }
-export default Aid;  
+
+const mapStateToProps = (state) => {
+  return {
+    values: state.auth.login,
+  };
+};
+export default connect(mapStateToProps,  { aidRequest})(
+ Aid
+);
+  
