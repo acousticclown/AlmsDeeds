@@ -2,39 +2,39 @@ import mock from "../mock"
 export let dataList = [
   {
     id: 1,
-    order_status: "on hold",
-    name: "Apple Watch series 4 GPS",
-    category: "Computers",
-    price: "69.99",
-    popularity: { popValue: "97", color: "success" },
+    order_status: "critical",
+    name: "Aman Khubani",
+    category: "Medicinal Aid",
+    price: "10 Ethers",
+    popularity: { popValue: "20", color: "danger" },
     img: require("../../assets/img/elements/apple-watch.png")
   },
   {
     id: 2,
-    popularity: { popValue: "83", color: "success" },
-    img: require("../../assets/img/elements/iphone-x.png"),
-    order_status: "delivered",
-    name: "Beats HeadPhones",
-    category: "Computers",
-    price: "69.99"
+    order_status: "critical",
+    name: "Nishi Patodi",
+    category: "Medicinal Aid",
+    price: "15 Ethers",
+    popularity: { popValue: "8", color: "danger" },
+    img: require("../../assets/img/elements/apple-watch.png")
   },
   {
     id: 3,
-    price: "199.99",
-    popularity: { popValue: "57", color: "warning" },
-    img: require("../../assets/img/elements/homepod.png"),
-    order_status: "canceled",
-    name: "Altec Lansing - Bluetooth Speaker",
-    category: "Audio"
+    order_status: "critical",
+    name: "Shivansh Pratap",
+    category: "Medicinal Aid",
+    price: "2 Ethers",
+    popularity: { popValue: "80", color: "success" },
+    img: require("../../assets/img/elements/apple-watch.png")
   },
   {
     id: 4,
-    img: require("../../assets/img/elements/ipad-pro.png"),
-    order_status: "delivered",
-    name: "Altec Lansing - Bluetooth Speaker",
-    category: "Computers",
-    price: "199.99",
-    popularity: { popValue: "65", color: "primary" }
+    order_status: "critical",
+    name: "Sandeep Singh Gour",
+    category: "Medicinal Aid",
+    price: "20 Ethers",
+    popularity: { popValue: "40", color: "warning" },
+    img: require("../../assets/img/elements/apple-watch.png")
   },
   {
     id: 5,
