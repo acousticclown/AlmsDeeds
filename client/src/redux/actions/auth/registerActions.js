@@ -9,8 +9,10 @@ export const signupWithEmailAndPassword = (user) => {
     authInstance
       .post("/signup", user)
       .then((response) => {
-        console.log(response)
+       var loggedInUser;
+
         if (response.data) {
+         
           loggedInUser = response.data.data;
 
           localStorage.setItem("auth-token", response.data.token);
