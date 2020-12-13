@@ -13,7 +13,6 @@ import {
   TabPane,
 } from "reactstrap";
 import classnames from "classnames";
-
 import RegisterEmailAndPassword from "./RegisterEmailAndPassword";
 import registerImg from "../../../../assets/img/pages/register.jpg";
 import "../../../../assets/scss/pages/authentication.scss";
@@ -58,7 +57,6 @@ class Register extends React.Component {
                   Fill the below form to create your account.
                   </p>
                   <Nav tabs className="px-2">
-                   
                     <NavItem>
                       <NavLink
                         className={classnames({
@@ -74,7 +72,6 @@ class Register extends React.Component {
                   </Nav>
                   <CardBody className="pt-1 pb-50">
                     <TabContent activeTab={this.state.activeTab}>
-                  
                       <TabPane tabId="4">
                         <RegisterEmailAndPassword />
                       </TabPane>

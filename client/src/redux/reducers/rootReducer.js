@@ -11,10 +11,6 @@ import home from "./home-page/"
 import donations from "./donations/"
 import aidRequest from "./askForAid/" 
 const rootReducer = combineReducers({
-  // calendar: calenderReducer,
-  // emailApp: emailReducer,
-  // todoApp: todoReducer,
-  // chatApp: chatReducer,
   customizer: customizer,
   auth: auth,
   navbar: navbar,
