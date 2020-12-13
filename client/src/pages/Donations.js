@@ -27,18 +27,13 @@ class Shop extends React.Component {
   };
 
   componentDidMount() {
-    getDonations();
+    this.props.getDonations();
   }
 
   render() {
     const {donations} = this.props;
     return (
       <React.Fragment>
-        {/* <Breacrumbs
-          // breadCrumbActive="Shop"
-          // breadCrumbParent="eCommerce"
-          breadCrumbTitle="Donate"
-        /> */}
         <div className="ecommerce-application">
           <ShopContent donations={donations}/>
         </div>

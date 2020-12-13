@@ -26,6 +26,32 @@ class DetailPage extends React.Component {
   state = {
     selectedColor: 1,
     sidebar: false,
+    details: {
+      Aiddetails: {
+        patientId: "",
+            aidId: "",
+            description: "",
+            category: "",
+            image: "",
+            document: "",
+            contact_no: "",
+            amount: 0,
+            urgency: "",
+            created_at: "",
+            updated_at: "",
+            patientDetails: {
+                "id": "",
+                "fullName": "",
+                "accHash": "",
+                "email": "",
+                "password": "",
+                "image": "",
+                "created_at": "",
+                "updated_at": ""
+            },
+            "ReqDon": []
+      }
+    }
   };
 
   handleSidebar = (boolean) => {
@@ -34,21 +60,25 @@ class DetailPage extends React.Component {
 
   toggleSelectedColor = (color) => this.setState({ selectedColor: color });
 
-  componentDidMount() {
-    this.props.getPersonById(this.props.match.params.id);
+  componentDidMount = async () => {
+    const details = await this.props.getPersonById(this.props.match.params.id);
+    this.setState({details})
   }
 
   render() {
+    const {details} = this.state;
+    // const fullName = details.AidDetails.patientDetails.fullName || ""
+    console.log(details)
     return (
       <React.Fragment>
         <Card className="overflow-hidden app-ecommerce-details">
           <CardBody className="pb-0">
             <Row className="mb-5 mt-2">
               <Col className="d-flex flex-column mb-2 mb-md-0" sm="12" md="5">
-                <h3>Aman Khubani</h3>
+                <h3>{details.Aiddetails.patientDetails.fullName}</h3>
                 <hr />
                 <div className="d-flex flex-column">
-                  <span className="text-muted">Email: aman.khubani@gmail.com</span>
+                  <span className="text-muted">Email: {details.Aiddetails.patientDetails.email|| ""}</span>
                   <span className="text-muted">Contact: 9131299848</span>
                 </div>
                 <SessionByDevice
@@ -62,16 +92,11 @@ class DetailPage extends React.Component {
               </Col>
               <Col md="7" sm="12">
                 <div className="d-flex flex-wrap">
-                  <h3 className="text-primary">500000</h3>
+                  <h3 className="text-primary">{details.Aiddetails.amount}</h3>
                 </div>
                 <hr />
                 <p>
-                  Simplify your everyday life with the Google Home, a
-                  voice-activated speaker powered by the Google Assistant. Use
-                  voice commands to enjoy music, get answers from Google and
-                  manage everyday tasks. Google Home is compatible with Android
-                  and iOS operating systems, and can control compatible smart
-                  devices such as Chromecast or Nest.
+                  {details.Aiddetails.patientDetails.description|| ""}
                 </p>
                 <ul className="list-unstyled">
                   <li className="mb-50">
@@ -92,7 +117,7 @@ class DetailPage extends React.Component {
                   <span>Account ID</span>
                   <span className="mx-50">-</span>
                   <span className="text-success">
-                    0x1fDa7f9bB9a55F26e33Dd957605A0474883e7DbD
+                    {details.Aiddetails.patientDetails.accHash|| ""}
                   </span>
                 </p>
                 <div className="action-btns">

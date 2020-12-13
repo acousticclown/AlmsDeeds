@@ -3,7 +3,7 @@ import {instance} from "../../../request";
 export const getDonations = () => {
   return (dispatch) => {
     instance
-      .get("/aidInfo/1/2")
+      .get("/aidInfo")
       .then((response) => {
           console.log(response)
         if (response.data.data) {
@@ -26,11 +26,11 @@ export const getPersonById = (aidId, dispatch) => {
         .then((response) => {
             console.log(response.data.data)
           if (response.data.data) {
-  
-            dispatch({
-              type: "GET_PERSON_BY_ID",
-              payload: response.data.data,
-            });
+            return response.data.data
+            // dispatch({
+            //   type: "GET_PERSON_BY_ID",
+            //   payload: response.data.data,
+            // });
           }
         })
         .catch((err) => console.log(err));
