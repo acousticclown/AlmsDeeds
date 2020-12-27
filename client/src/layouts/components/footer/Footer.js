@@ -17,7 +17,7 @@ const Footer = props => {
         <span className="float-md-left d-block d-md-inline-block mt-25">
           COPYRIGHT © {new Date().getFullYear()}
           <a
-            href="https://www.rdxtm.com"
+            href="#"
             target="_blank"
             rel="noopener noreferrer" 
           >

@@ -79,11 +79,11 @@ class Revenue extends React.Component {
     series: [
       {
         name: "This Month",
-        data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600],
+        data: [1,1,0.5,2,3,2.5],
       },
       {
         name: "Last Month",
-        data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000],
+        data: [1,0.5,2],
       },
     ],
   };
@@ -99,15 +99,15 @@ class Revenue extends React.Component {
             <div className="mr-2">
               <p className="mb-50 text-bold-600">This Month</p>
               <h2 className="text-bold-400">
-                <sup className="font-medium-1 mr-50">$</sup>
-                <span className="text-success">86,589</span>
+                <sup className="font-medium-1 mr-50">ETH</sup>
+                <span className="text-success">8</span>
               </h2>
             </div>
             <div>
               <p className="mb-50 text-bold-600">Last Month</p>
               <h2 className="text-bold-400">
-                <sup className="font-medium-1 mr-50">$</sup>
-                <span>73,683</span>
+                <sup className="font-medium-1 mr-50">ETH</sup>
+                <span>3.5</span>
               </h2>
             </div>
           </div>

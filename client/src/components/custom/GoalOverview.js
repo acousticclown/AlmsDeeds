@@ -60,7 +60,7 @@ class GoalOverview extends React.Component {
         lineCap: "round"
       }
     },
-    series: [83]
+    series: [11.5]
   }
   render() {
     return (
@@ -80,11 +80,11 @@ class GoalOverview extends React.Component {
         <div className="d-flex mt-2">
           <div className="completed border-top border-right text-center w-50 py-1">
             <p className="mb-50">Completed</p>
-            <p className="font-large-1 text-bold-600 mb-50">786,617</p>
+            <p className="font-large-1 text-bold-600 mb-50">11.5</p>
           </div>
           <div className="in-progress border-top border-right text-center w-50 py-1">
-            <p className="mb-50">In Progress</p>
-            <p className="font-large-1 text-bold-600 mb-50">13,561</p>
+            <p className="mb-50">Needed</p>
+            <p className="font-large-1 text-bold-600 mb-50">88.5</p>
           </div>
         </div>
       </Card>
