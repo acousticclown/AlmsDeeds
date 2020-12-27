@@ -1,9 +1,13 @@
 import React from "react"
+import {connect} from "react-redux"
 import { Card, CardHeader, CardTitle, CardBody } from "reactstrap"
 import Chart from "react-apexcharts"
 import { HelpCircle } from "react-feather"
 
 class GoalOverview extends React.Component {
+  getGoalInPercent = (pending, total) => {
+    return ((total-pending)/total)*100
+  }
   state = {
     options: {
       chart: {
@@ -60,9 +64,14 @@ class GoalOverview extends React.Component {
         lineCap: "round"
       }
     },
-    series: [11.5]
+    series: [this.getGoalInPercent(4, this.props.totalAids)]
   }
+  
   render() {
+    let {totalAids} = this.props;
+    // totalAids = parseInt(totalAids)
+    console.log(totalAids)
+    const demandPending = 4;
     return (
       <Card>
         <CardHeader>
@@ -80,15 +89,20 @@ class GoalOverview extends React.Component {
         <div className="d-flex mt-2">
           <div className="completed border-top border-right text-center w-50 py-1">
             <p className="mb-50">Completed</p>
-            <p className="font-large-1 text-bold-600 mb-50">11.5</p>
+            <p className="font-large-1 text-bold-600 mb-50">{totalAids-demandPending}</p>
           </div>
           <div className="in-progress border-top border-right text-center w-50 py-1">
             <p className="mb-50">Needed</p>
-            <p className="font-large-1 text-bold-600 mb-50">88.5</p>
+            <p className="font-large-1 text-bold-600 mb-50">{demandPending}</p>
           </div>
         </div>
       </Card>
     )
   }
 }
-export default GoalOverview
+
+const mapStateToProps = (state) => ({
+  totalAids: state.home.dashboardData.data.TotalAids[0].count
+})
+
+export default connect(mapStateToProps)(GoalOverview);

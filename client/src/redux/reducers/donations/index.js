@@ -1,10 +1,12 @@
 import { combineReducers } from "redux"
 import { donations } from "./donations"
-// import { dashboardData } from "./dashboardReducer"
+import { recentDonations } from "./recentDonations"
+import { donators } from "./donators"
 
 const homePageReducers = combineReducers({
   donations,
-//   dashboardData,
+  recentDonations,
+  donators
 })
 
 export default homePageReducers;

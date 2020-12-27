@@ -1,13 +1,9 @@
 import React from "react";
+import {connect} from "react-redux";
 import { Card, CardBody } from "reactstrap";
-import img1 from "../../assets/img/portrait/small/avatar-s-1.jpg";
-import img2 from "../../assets/img/portrait/small/avatar-s-2.jpg";
-import img3 from "../../assets/img/portrait/small/avatar-s-3.jpg";
-import img4 from "../../assets/img/portrait/small/avatar-s-4.jpg";
-import img5 from "../../assets/img/portrait/small/avatar-s-5.jpg";
-
 class TableContent extends React.Component {
   render() {
+    const {donators} = this.props;
     return (
       <Card>
         <CardBody>
@@ -27,6 +23,14 @@ class TableContent extends React.Component {
             </div>
           </div>
           <h4 className="mt-3">Top Donators</h4>
+          {donators.length>0 && donators.map(donator => (
+            <div className="supporter-details mt-2">
+              <div className="supporter-info d-inline-block">
+                <div className="font-weight-bold">{donator.name}</div>
+    
+              </div>
+            </div>
+          ))}
           <div className="supporter-details mt-2">
             <div className="supporter-info d-inline-block">
               <div className="font-weight-bold">Aman Khubani</div>
@@ -62,4 +66,9 @@ class TableContent extends React.Component {
     );
   }
 }
-export default TableContent;
+
+const mapStateToProps = (state) => ({
+  donators: state.donations.donators.data
+})
+
+export default connect(mapStateToProps)(TableContent);

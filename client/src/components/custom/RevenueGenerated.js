@@ -22,7 +22,7 @@ class RevenueGenerated extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  donationAmt: state.home.dashboardData.data.TotalDonation[0].sum
+  donationAmt: state.home.dashboardData.data.TotalDonation
 })
 
 export default connect(mapStateToProps)(RevenueGenerated);

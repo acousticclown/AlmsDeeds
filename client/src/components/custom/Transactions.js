@@ -22,7 +22,8 @@ class OrdersReceived extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  transactions: state.home.dashboardData.data.TotalTransaction[0].count
+  transactions: state.home.dashboardData.data.TransactionMade[0].count
 })
 
 export default connect(mapStateToProps)(OrdersReceived);
+

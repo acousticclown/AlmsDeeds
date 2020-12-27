@@ -115,8 +115,8 @@ class DataListConfig extends Component {
   };
 
   componentDidMount() {
-    this.props.getData({ page: 1, perPage: 4 });
-    this.props.getInitialData();
+    // this.props.getData({ page: 1, perPage: 4 });
+    // this.props.getInitialData();
   }
 
   handleRowsPerPage = (value) => {

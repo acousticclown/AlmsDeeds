@@ -21,8 +21,9 @@ class QuaterlySales extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  donors: state.home.dashboardData.data.TotalAids[0].count
-})
+// const mapStateToProps = (state) => ({
+//   donors: state.home.dashboardData.data.TotalAids[0].count
+// })
 
-export default connect(mapStateToProps)(QuaterlySales);
+// export default connect(mapStateToProps)(QuaterlySales);
+export default QuaterlySales;

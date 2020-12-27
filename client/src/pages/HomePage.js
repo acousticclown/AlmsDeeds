@@ -11,6 +11,8 @@ import QuaterlySales from "../components/custom/QuaterlySales";
 import DonationsSlider from "../extensions/swiper/CenteredSlidesStyle1";
 import RequiredDonations from "../components/custom/RequiredDonations";
 import {getAidData, getDashboardData} from "../redux/actions/home-page";
+import {getRecentDonations} from "../redux/actions/donations";
+import {getTopDonators} from "../redux/actions/donations";
 
 import "../assets/scss/pages/dashboard-analytics.scss";
 import "../assets/scss/pages/faq.scss";
@@ -28,8 +30,10 @@ let $primary = "#7367F0",
 class AnalyticsDashboard extends React.Component {
 
   componentDidMount = async () => {
-   const aidData= await this.props.getAidData(); 
-  const dashData= await this.props.getDashboardData(); 
+    this.props.getAidData(); 
+    this.props.getDashboardData(); 
+    this.props.getRecentDonations(); 
+    this.props.getTopDonators();
   }
 
   render() {
@@ -97,4 +101,4 @@ const mapStateToProps = (state) => ({
   userRole: state.auth.login.userRole,
 });
 
-export default connect(mapStateToProps, { getAidData, getDashboardData })(AnalyticsDashboard);
+export default connect(mapStateToProps, { getAidData, getDashboardData, getRecentDonations,getTopDonators })(AnalyticsDashboard);
