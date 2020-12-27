@@ -1,15 +1,17 @@
 import React from "react";
+import {connect} from "react-redux";
 import StatisticsCard from "../@vuexy/statisticsCard/StatisticsCard";
 import { Package } from "react-feather";
 import { ordersReceived, ordersReceivedSeries } from "./StatisticsData";
 
 class OrdersReceived extends React.Component {
   render() {
+    const {transactions} = this.props;
     return (
       <StatisticsCard
         icon={<Package className="warning" size={22} />}
         iconBg="warning"
-        stat="8"
+        stat={`${transactions}`}
         statTitle="Transactions Made"
         options={ordersReceived}
         series={ordersReceivedSeries}
@@ -18,4 +20,9 @@ class OrdersReceived extends React.Component {
     );
   }
 }
-export default OrdersReceived;
+
+const mapStateToProps = (state) => ({
+  transactions: state.home.dashboardData.data.TotalTransaction[0].count
+})
+
+export default connect(mapStateToProps)(OrdersReceived);

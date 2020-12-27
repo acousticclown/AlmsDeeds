@@ -49,7 +49,7 @@ export const subscribersGained = {
 
 export const subscribersGainedSeries = [
   {
-    name: "Regiterations",
+    name: "Registerations",
     data: [0, 2, 3, 5, 6, 8]
   }
 ]

@@ -19,9 +19,9 @@ const Footer = props => {
           <a
             href="https://www.rdxtm.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
           >
-            RDX.TM,
+            VoidMinds,
           </a>
           All rights reserved
         </span>

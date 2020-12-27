@@ -1,8 +1,9 @@
 import axios from "axios"
+import {instance } from "../../../request"
 
 export const getData = params => {
   return async dispatch => {
-    await axios.get("/api/datalist/data", params).then(response => {
+    await instance.get("/api/datalist/data", params).then(response => {
       dispatch({
         type: "GET_DATA",
         data: response.data.data,
